@@ -83,6 +83,12 @@ public class AMap4LocationPlugin extends CordovaPlugin implements AMapLocationLi
                 //返回的状态码
                 int statusCode = amapLocation.getErrorCode();
                 if(statusCode==0){
+					//获取经度
+					resultObject.put("longitude",amapLocation.getLongitude());
+					//获取纬度
+					resultObject.put("latitude",amapLocation.getLatitude());
+					//获取地址
+					resultObject.put("formattedAddress",amapLocation.getAddress());
                     //城市名称
                     resultObject.put("cityName",amapLocation.getCity());
                     //城市编码
@@ -91,8 +97,13 @@ public class AMap4LocationPlugin extends CordovaPlugin implements AMapLocationLi
                     resultObject.put("provinceName",amapLocation.getProvince());
                     //地区
                     resultObject.put("districtName",amapLocation.getDistrict());
+					//获取区域编码
+					resultObject.put("adcode",amapLocation.getAdCode());
                     //路或街道
-                    resultObject.put("roadName",amapLocation.getRoad());
+                    resultObject.put("street",amapLocation.getStreet());
+					//获取门牌号
+					resultObject.put("number",amapLocation.getStreetNum());
+					
                     mainCallbackContext.success(resultObject);
                 }else{
                     //错误编码
