@@ -30,7 +30,7 @@
     <!-- android -->
     <source-file src="src/android/AMap4LocationPlugin.java"
                  target-dir="src/com/tomisacat/cordova" />
-    <source-file src="src/android/AMap_Location_V2.2.0_20151222.jar" target-dir="libs" />
+    <source-file src="src/android/AMap_Location_V2.4.0_20160308.jar" target-dir="libs" />
 
     <config-file target="AndroidManifest.xml" parent="/manifest">
       <!--用于进行网络定位-->
@@ -56,11 +56,7 @@
       <service android:name="com.amap.api.location.APSService" />
       <meta-data
               android:name="com.amap.api.v2.apikey"
-              android:value="0670a615d302adc5f1dfc5fa030c9c14" />
-      <!--APIKey-->
-      <!--<meta-data-->
-              <!--android:name="com.amap.api.v2.apikey"-->
-              <!--android:value="12b0bfa6074cd52561528ad5991d9c1d" />-->
+              android:value="bb27538c38b387012035c8d855988968" />
     </config-file>
 
   </platform>
@@ -96,7 +92,7 @@
 
     <!--APIKey 请自行配置 参照高德官网-->
     <config-file target="*-Info.plist" parent="AMapApiKey">
-      <string>4b2050d5cdfc48ff81e625caae0b453f</string>
+      <string>0988c39e48573767176bb46b46a6d482</string>
     </config-file>
 
   </platform>
