@@ -50,12 +50,23 @@
             }else{
                 if (regeocode)
                 {
-                    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:regeocode.province,@"provinceName",
-                                          regeocode.city,@"cityName",
-                                          regeocode.citycode,@"cityCode",
-                                          regeocode.district,@"districtName",
-                                          regeocode.township,@"roadName",
-                                          nil];
+                    NSNumber *latitude = [[NSNumber alloc] initWithDouble:location.coordinate.latitude];
+                    NSNumber *longitude = [[NSNumber alloc] initWithDouble:location.coordinate.longitude];
+                    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
+                                            regeocode.formattedAddress,@"formattedAddress",
+                                            latitude,@"latitude",
+                                            longitude,@"longitude",
+                                            regeocode.citycode,@"cityCode",
+                                            regeocode.adcode,@"adcode",
+                                            regeocode.street,@"street",
+                                            regeocode.number,@"number",
+                                            regeocode.province,@"provinceName",
+                                            regeocode.city,@"cityName",
+                                            regeocode.district,@"districtName",
+                                            regeocode.township,@"roadName",
+                                            regeocode.building,@"building",
+                                            regeocode.neighborhood,@"neighborhood",
+                    					  nil];
                     pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:dict];
                     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
                 }
